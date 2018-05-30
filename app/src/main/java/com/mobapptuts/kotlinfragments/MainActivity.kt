@@ -21,19 +21,16 @@ class MainActivity : AppCompatActivity() {
 
         // Handle navigation click events
         navigationView.setNavigationItemSelectedListener {
-//            when(it.itemId){
-//                R.id.home -> drawerLayout.openDrawer(GravityCompat.START)
-//                else -> selectDrawerItem(it)
-//            }
+
             selectDrawerItem(it)
             true
         }
 
-//        setSupportActionBar(toolbar)
-//        supportActionBar?.apply {
-//            setDisplayHomeAsUpEnabled(true)
-//            setHomeAsUpIndicator(R.drawable.ic_menu)
-//        }
+        setSupportActionBar(toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_menu)
+        }
 
     }
 
@@ -55,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return when (item?.itemId) {
-            R.id.home -> {
+            android.R.id.home -> {
                 mDrawerLayout.openDrawer(GravityCompat.START)
                 true
             }

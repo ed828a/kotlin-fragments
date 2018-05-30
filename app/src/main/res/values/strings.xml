@@ -1,4 +1,8 @@
 <resources>
+    <string-array name="list_menu">
+        <item>Frist Image</item>
+        <item>Second Image</item>
+    </string-array>
     <string name="app_name">Kotlin Fragments</string>
     <string name="first_image">First Image Fragment</string>
     <string name="second_image">Second Image Fragment</string>

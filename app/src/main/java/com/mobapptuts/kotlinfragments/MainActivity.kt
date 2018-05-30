@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         //Handle navigation click events
         navigationView.setNavigationItemSelectedListener {
-
             selectDrawerItem(it)
             true
         }
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
         try {
             fragment = fragmentClass.newInstance() as Fragment
-        } catch (e: ClassCastException) {
+        } catch (e: Throwable) {
             e.printStackTrace()
         }
         replaceFragment(fragment)
@@ -47,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return when (item?.itemId) {
-            android.R.id.home -> {
+                        android.R.id.home -> {
                 drawerLayout.openDrawer(GravityCompat.START)
                 true
 

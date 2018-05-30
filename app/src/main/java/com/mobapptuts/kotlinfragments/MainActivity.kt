@@ -14,9 +14,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Handle navigation click events
         navigationView.setNavigationItemSelectedListener {
+
             selectDrawerItem(it)
             true
+        }
+
+        setSupportActionBar(toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_menu)
         }
 
     }
@@ -39,6 +47,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return when (item?.itemId) {
+            android.R.id.home -> {
+                drawerLayout.openDrawer(GravityCompat.START)
+                true
+
+            }
+
             R.id.firstFragmentItem -> {
                 val fragment = FirstImageFragment.newInstance()
                 replaceFragment(fragment)
